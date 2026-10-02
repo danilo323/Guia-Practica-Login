@@ -32,6 +32,7 @@ Portal de acceso para **CITRA**, una marca inspirada en el emulador de Nintendo 
 ```
 ├── index.html     → Estructura: panel de marca, pestañas y los 3 formularios
 ├── bienvenida.html → Página que se muestra después de iniciar sesión
+├── bienvenida.js  → Regresa al login si no hay sesión iniciada
 ├── style.css      → Paleta CITRA, estilos, animaciones y diseño responsivo
 ├── script.js      → Cambio de formularios, validaciones, registro y login
 ├── img/
