@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 20px;
+  padding: 16px 20px;
   color: var(--text);
   background-color: var(--bg);
   background-image:
@@ -32,7 +32,7 @@ body {
 .card {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  width: 1000px;
+  width: 960px;
   max-width: 100%;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -48,8 +48,8 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 48px 40px;
+  gap: 24px;
+  padding: 36px 36px;
   overflow: hidden;
   background:
     radial-gradient(
@@ -67,12 +67,12 @@ body {
 }
 
 .brand-logo {
-  width: 170px;
+  width: 150px;
   height: auto;
 }
 
 .brand-text h1 {
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   font-weight: 800;
   line-height: 1.25;
 }
@@ -85,37 +85,37 @@ body {
 }
 
 .brand-text p {
-  margin-top: 12px;
-  font-size: 0.95rem;
+  margin-top: 8px;
+  font-size: 0.88rem;
   color: var(--text-muted);
 }
 
 .brand-features {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   list-style: none;
 }
 
 .brand-features li {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.9rem;
+  gap: 10px;
+  font-size: 0.85rem;
   color: #d6d6d6;
 }
 
 .brand-features i {
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
-  border-radius: 10px;
+  border-radius: 8px;
   background: rgba(255, 137, 4, 0.12);
   border: 1px solid rgba(255, 137, 4, 0.3);
   color: var(--orange);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .brand-footer {
@@ -128,7 +128,7 @@ body {
   position: absolute;
   right: -90px;
   bottom: -80px;
-  width: 300px;
+  width: 280px;
   opacity: 0.12;
   transform: rotate(-15deg);
   pointer-events: none;
@@ -138,8 +138,8 @@ body {
 .auth {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 32px 44px;
+  gap: 16px;
+  padding: 28px 36px;
 }
 
 /* ---------- Pestañas ---------- */
@@ -156,11 +156,11 @@ body {
 .tab {
   position: relative;
   z-index: 1;
-  padding: 11px;
+  padding: 9px;
   border: none;
   background: none;
   color: var(--text-muted);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
   transition: color 0.3s;
@@ -199,58 +199,55 @@ body {
 .view {
   grid-area: 1 / 1;
   align-self: center;
-  display: flex;
+  display: none;
   flex-direction: column;
   opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateX(-30px);
+  transform: translateY(10px);
   transition:
-    opacity 0.4s ease,
-    transform 0.45s var(--ease),
-    visibility 0.45s;
+    opacity 0.3s ease,
+    transform 0.3s var(--ease);
 }
 
 #form-register {
-  transform: translateX(30px);
+  transform: translateY(10px);
 }
 
 #form-forgot {
-  transform: translateY(20px);
+  transform: translateY(10px);
 }
 
 .view.active {
+  display: flex;
   opacity: 1;
-  visibility: visible;
   pointer-events: auto;
   transform: none !important;
 }
 
 .view-header {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .view-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 700;
 }
 
 .view-header p {
-  margin-top: 4px;
-  font-size: 0.88rem;
+  margin-top: 2px;
+  font-size: 0.82rem;
   color: var(--text-muted);
 }
 
 /* ================= CAMPOS ================= */
 .field {
   width: 100%;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .field label {
   display: block;
-  margin-bottom: 6px;
-  font-size: 0.75rem;
+  margin-bottom: 4px;
+  font-size: 0.72rem;
   font-weight: 600;
   color: #cfcfcf;
 }
@@ -259,17 +256,17 @@ body {
 .row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 14px;
+  gap: 10px;
 }
 
 .input-box {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 0 14px;
+  gap: 8px;
+  padding: 0 12px;
   background: var(--input);
   border: 1.5px solid var(--border);
-  border-radius: 10px;
+  border-radius: 9px;
   transition:
     border-color 0.25s,
     box-shadow 0.25s;
@@ -281,7 +278,7 @@ body {
 }
 
 .input-box > i {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--orange);
 }
 
@@ -289,12 +286,12 @@ body {
 .input-box select {
   flex: 1;
   min-width: 0;
-  padding: 11px 0;
+  padding: 8px 0;
   border: none;
   outline: none;
   background: transparent;
   color: var(--text);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
 }
 
 .input-box input::placeholder {
@@ -330,7 +327,7 @@ body {
   border: none;
   background: none;
   color: var(--text-dim);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   cursor: pointer;
   transition: color 0.2s;
 }
@@ -341,9 +338,9 @@ body {
 
 .error-msg {
   display: block;
-  min-height: 16px;
-  margin-top: 4px;
-  font-size: 0.7rem;
+  min-height: 14px;
+  margin-top: 2px;
+  font-size: 0.68rem;
   color: var(--error);
 }
 
@@ -359,11 +356,11 @@ body {
 
 /* ================= FUERZA DE LA CONTRASEÑA ================= */
 .strength {
-  margin: 2px 0 6px;
+  margin: 2px 0 4px;
 }
 
 .strength-bar {
-  height: 4px;
+  height: 3px;
   border-radius: 4px;
   background: var(--border);
   overflow: hidden;
@@ -382,18 +379,18 @@ body {
 .pass-rules {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
+  gap: 4px;
+  margin-top: 6px;
   list-style: none;
 }
 
 .pass-rules li {
-  padding: 3px 9px;
+  padding: 2px 7px;
   border: 1px solid var(--border);
   border-radius: 20px;
   background: var(--input);
   color: var(--text-dim);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   transition: 0.25s;
 }
 
@@ -410,13 +407,13 @@ body {
   align-items: center;
   gap: 6px;
   width: 100%;
-  margin-top: 10px;
-  padding: 13px;
+  margin-top: 8px;
+  padding: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 9px;
   background: var(--gradient);
   color: #111;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
   transition:
@@ -426,7 +423,7 @@ body {
 }
 
 .btn i {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .btn:hover {
@@ -447,7 +444,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 500;
   color: var(--orange);
   text-decoration: none;
@@ -459,18 +456,18 @@ body {
 
 .link.forgot {
   align-self: flex-end;
-  margin: -2px 0 6px;
+  margin: 0 0 4px;
 }
 
 .link.back {
   align-self: center;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .switch {
-  margin-top: 18px;
+  margin-top: 12px;
   text-align: center;
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
@@ -488,9 +485,9 @@ body {
 .divider {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 22px 0 16px;
-  font-size: 0.75rem;
+  gap: 10px;
+  margin: 12px 0 10px;
+  font-size: 0.72rem;
   color: var(--text-dim);
 }
 
@@ -505,19 +502,19 @@ body {
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .social {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   background: var(--input);
   color: #cfcfcf;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
 }
 
 /* ================= MENSAJE EMERGENTE (TOAST) ================= */
