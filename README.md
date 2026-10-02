@@ -32,9 +32,12 @@ Portal de acceso para **CITRA**, una marca inspirada en el emulador de Nintendo 
 ```
 ├── index.html     → Estructura: panel de marca, pestañas y los 3 formularios
 ├── bienvenida.html → Página que se muestra después de iniciar sesión
-├── bienvenida.js  → Regresa al login si no hay sesión iniciada
-├── style.css      → Paleta CITRA, estilos, animaciones y diseño responsivo
-├── script.js      → Cambio de formularios, validaciones, registro y login
+├── css/
+│   ├── root.css   → Variables CSS reutilizables y configuración de tema
+│   └── styles.css → Estilos, animaciones y diseño responsivo
+├── js/
+│   ├── bienvenida.js → Regresa al login si no hay sesión iniciada
+│   └── script.js     → Cambio de formularios, validaciones, registro y login
 ├── img/
 │   ├── citra-logo.webp   → Logo con texto (panel de marca)
 │   ├── citra-icono.png   → Icono de la naranja (decoración)

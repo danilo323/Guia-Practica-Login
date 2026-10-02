@@ -1,0 +1,23 @@
+:root {
+  color-scheme: dark;
+
+  --orange: #ff8904;
+  --amber: #ffc503;
+  --gradient: linear-gradient(90deg, var(--amber) 0%, var(--orange) 100%);
+
+  --bg: #0a0a0a;
+  --surface: #121212;
+  --surface-2: #1a1a1a;
+  --input: #1b1b1b;
+  --border: #2b2b2b;
+
+  --text: #f2f2f2;
+  --text-muted: #9a9a9a;
+  --text-dim: #666;
+
+  --error: #ff5252;
+  --success: #3ddc84;
+
+  --radius: 18px;
+  --ease: cubic-bezier(0.65, 0, 0.35, 1);
+}
