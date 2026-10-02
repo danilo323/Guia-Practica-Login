@@ -1,242 +1,375 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CITRA | Iniciar sesión</title>
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon.png" />
 
     <!-- Fuente Montserrat (Google Fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Iconos (Boxicons) -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="css/root.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="css/root.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
     <main class="card" id="card" data-view="login">
+      <!-- ================= PANEL DE MARCA ================= -->
+      <aside class="brand">
+        <img src="img/citra-logo.webp" alt="Logo de CITRA" class="brand-logo" />
 
-        <!-- ================= PANEL DE MARCA ================= -->
-        <aside class="brand">
-            <img src="img/citra-logo.webp" alt="Logo de CITRA" class="brand-logo">
+        <div class="brand-text">
+          <h1>Tus juegos de <span>Nintendo 3DS</span>, en cualquier lugar</h1>
+          <p>Crea tu cuenta CITRA y lleva tu progreso contigo.</p>
+        </div>
 
-            <div class="brand-text">
-                <h1>Tus juegos de <span>Nintendo 3DS</span>, en cualquier lugar</h1>
-                <p>Crea tu cuenta CITRA y lleva tu progreso contigo.</p>
+        <ul class="brand-features">
+          <li><i class="bx bx-joystick"></i> Juega en alta resolución</li>
+          <li>
+            <i class="bx bx-cloud-upload"></i> Sincroniza tus partidas guardadas
+          </li>
+          <li><i class="bx bx-group"></i> Únete a la comunidad CITRA</li>
+        </ul>
+
+        <small class="brand-footer"
+          >© 2026 CITRA. Todos los derechos reservados.</small
+        >
+
+        <!-- Decoración -->
+        <img
+          src="img/citra-icono.png"
+          alt=""
+          class="brand-deco"
+          aria-hidden="true"
+        />
+      </aside>
+
+      <!-- ================= ZONA DE FORMULARIOS ================= -->
+      <section class="auth">
+        <!-- Pestañas para cambiar entre formularios -->
+        <nav class="tabs" role="tablist">
+          <button
+            type="button"
+            class="tab active"
+            id="tab-login"
+            role="tab"
+            aria-selected="true"
+            data-action="show-login"
+          >
+            Iniciar sesión
+          </button>
+          <button
+            type="button"
+            class="tab"
+            id="tab-register"
+            role="tab"
+            aria-selected="false"
+            data-action="show-register"
+          >
+            Registrarse
+          </button>
+          <span class="tab-indicator"></span>
+        </nav>
+
+        <div class="views">
+          <!-- ========== INICIO DE SESIÓN ========== -->
+          <!-- novalidate: las validaciones las hace script.js para mostrar mensajes personalizados -->
+          <form id="form-login" class="view active" novalidate>
+            <header class="view-header">
+              <h2>Hola de nuevo 👋</h2>
+              <p>Ingresa a tu cuenta CITRA</p>
+            </header>
+
+            <div class="field">
+              <label for="login-email">Correo electrónico</label>
+              <div class="input-box">
+                <i class="bx bx-envelope"></i>
+                <input
+                  type="email"
+                  id="login-email"
+                  name="email"
+                  placeholder="usuario@correo.com"
+                  required
+                  maxlength="100"
+                  autocomplete="email"
+                />
+              </div>
+              <small class="error-msg"></small>
             </div>
 
-            <ul class="brand-features">
-                <li><i class='bx bx-joystick'></i> Juega en alta resolución</li>
-                <li><i class='bx bx-cloud-upload'></i> Sincroniza tus partidas guardadas</li>
-                <li><i class='bx bx-group'></i> Únete a la comunidad CITRA</li>
-            </ul>
-
-            <small class="brand-footer">© 2026 CITRA. Todos los derechos reservados.</small>
-
-            <!-- Decoración -->
-            <img src="img/citra-icono.png" alt="" class="brand-deco" aria-hidden="true">
-        </aside>
-
-        <!-- ================= ZONA DE FORMULARIOS ================= -->
-        <section class="auth">
-
-            <!-- Pestañas para cambiar entre formularios -->
-            <nav class="tabs" role="tablist">
-                <button type="button" class="tab active" id="tab-login" role="tab" aria-selected="true" data-action="show-login">Iniciar sesión</button>
-                <button type="button" class="tab" id="tab-register" role="tab" aria-selected="false" data-action="show-register">Registrarse</button>
-                <span class="tab-indicator"></span>
-            </nav>
-
-            <div class="views">
-
-                <!-- ========== INICIO DE SESIÓN ========== -->
-                <!-- novalidate: las validaciones las hace script.js para mostrar mensajes personalizados -->
-                <form id="form-login" class="view active" novalidate>
-                    <header class="view-header">
-                        <h2>Hola de nuevo 👋</h2>
-                        <p>Ingresa a tu cuenta CITRA</p>
-                    </header>
-
-                    <div class="field">
-                        <label for="login-email">Correo electrónico</label>
-                        <div class="input-box">
-                            <i class='bx bx-envelope'></i>
-                            <input type="email" id="login-email" name="email" placeholder="usuario@correo.com"
-                                   required maxlength="100" autocomplete="email">
-                        </div>
-                        <small class="error-msg"></small>
-                    </div>
-
-                    <div class="field">
-                        <label for="login-password">Contraseña</label>
-                        <div class="input-box">
-                            <i class='bx bx-lock-alt'></i>
-                            <input type="password" id="login-password" name="password" placeholder="••••••••"
-                                   required maxlength="64" autocomplete="current-password">
-                            <button type="button" class="toggle-pass" aria-label="Mostrar contraseña"><i class='bx bx-show'></i></button>
-                        </div>
-                        <small class="error-msg"></small>
-                    </div>
-
-                    <a href="#" class="link forgot" data-action="show-forgot">¿Olvidaste tu contraseña?</a>
-
-                    <button type="submit" class="btn">Entrar <i class='bx bx-right-arrow-alt'></i></button>
-
-                    <div class="divider"><span>o continúa con</span></div>
-
-                    <!-- Iconos sociales: solo decorativos, sin funcionalidad -->
-                    <div class="social-icons" aria-hidden="true">
-                        <span class="social"><i class='bx bxl-google'></i></span>
-                        <span class="social"><i class='bx bxl-github'></i></span>
-                        <span class="social"><i class='bx bxl-linkedin'></i></span>
-                    </div>
-
-                    <p class="switch">¿No tienes cuenta? <a href="#" data-action="show-register">Regístrate</a></p>
-                </form>
-
-                <!-- ========== OLVIDÉ MI CONTRASEÑA ========== -->
-                <form id="form-forgot" class="view" novalidate>
-                    <header class="view-header">
-                        <h2>Recuperar contraseña</h2>
-                        <p>Te enviaremos las instrucciones a tu correo</p>
-                    </header>
-
-                    <div class="field">
-                        <label for="forgot-email">Correo electrónico</label>
-                        <div class="input-box">
-                            <i class='bx bx-envelope'></i>
-                            <input type="email" id="forgot-email" name="email" placeholder="usuario@correo.com"
-                                   required maxlength="100" autocomplete="email">
-                        </div>
-                        <small class="error-msg"></small>
-                    </div>
-
-                    <button type="submit" class="btn">Enviar instrucciones <i class='bx bx-send'></i></button>
-
-                    <a href="#" class="link back" data-action="show-login"><i class='bx bx-arrow-back'></i> Volver al inicio de sesión</a>
-                </form>
-
-                <!-- ========== REGISTRO ========== -->
-                <form id="form-register" class="view" novalidate>
-                    <header class="view-header">
-                        <h2>Crea tu cuenta</h2>
-                        <p>Completa tus datos para unirte a CITRA</p>
-                    </header>
-
-                    <div class="field">
-                        <label for="reg-name">Nombre completo</label>
-                        <div class="input-box">
-                            <i class='bx bx-user'></i>
-                            <input type="text" id="reg-name" name="name" placeholder="Ej: Ana Pérez"
-                                   required minlength="3" maxlength="50" autocomplete="name">
-                        </div>
-                        <small class="error-msg"></small>
-                    </div>
-
-                    <div class="field">
-                        <label for="reg-email">Correo electrónico</label>
-                        <div class="input-box">
-                            <i class='bx bx-envelope'></i>
-                            <input type="email" id="reg-email" name="email" placeholder="usuario@correo.com"
-                                   required maxlength="100" autocomplete="email">
-                        </div>
-                        <small class="error-msg"></small>
-                    </div>
-
-                    <div class="row">
-                        <div class="field">
-                            <label for="reg-phone">Teléfono</label>
-                            <div class="input-box">
-                                <i class='bx bx-phone'></i>
-                                <input type="tel" id="reg-phone" name="phone" placeholder="0991234567"
-                                       required pattern="09[0-9]{8}" minlength="10" maxlength="10"
-                                       inputmode="numeric" autocomplete="tel">
-                            </div>
-                            <small class="error-msg"></small>
-                        </div>
-
-                        <div class="field">
-                            <label for="reg-age">Edad</label>
-                            <div class="input-box">
-                                <i class='bx bx-calendar'></i>
-                                <input type="number" id="reg-age" name="age" placeholder="18"
-                                       required min="16" max="99" step="1">
-                            </div>
-                            <small class="error-msg"></small>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <label for="reg-career">Carrera</label>
-                        <div class="input-box">
-                            <i class='bx bx-book'></i>
-                            <select id="reg-career" name="career" required>
-                                <option value="" selected disabled>Selecciona tu carrera</option>
-                                <option value="software">Ingeniería de Software</option>
-                                <option value="ti">Tecnologías de la Información</option>
-                                <option value="industrial">Ingeniería Industrial</option>
-                                <option value="educacion">Educación</option>
-                                <option value="otra">Otra</option>
-                            </select>
-                        </div>
-                        <small class="error-msg"></small>
-                    </div>
-
-                    <div class="row">
-                        <div class="field">
-                            <label for="reg-password">Contraseña</label>
-                            <div class="input-box">
-                                <i class='bx bx-lock-alt'></i>
-                                <input type="password" id="reg-password" name="password" placeholder="••••••••"
-                                       required minlength="8" maxlength="64" autocomplete="new-password">
-                                <button type="button" class="toggle-pass" aria-label="Mostrar contraseña"><i class='bx bx-show'></i></button>
-                            </div>
-                            <small class="error-msg"></small>
-                        </div>
-
-                        <div class="field">
-                            <label for="reg-confirm">Confirmar contraseña</label>
-                            <div class="input-box">
-                                <i class='bx bx-lock'></i>
-                                <input type="password" id="reg-confirm" name="confirm" placeholder="••••••••"
-                                       required minlength="8" maxlength="64" autocomplete="new-password">
-                                <button type="button" class="toggle-pass" aria-label="Mostrar contraseña"><i class='bx bx-show'></i></button>
-                            </div>
-                            <small class="error-msg"></small>
-                        </div>
-                    </div>
-
-                    <div class="strength">
-                        <div class="strength-bar"><span id="strength-fill"></span></div>
-                        <ul class="pass-rules" id="pass-rules">
-                            <li data-rule="length">8+ caracteres</li>
-                            <li data-rule="upper">Mayúscula</li>
-                            <li data-rule="lower">Minúscula</li>
-                            <li data-rule="number">Número</li>
-                            <li data-rule="special">Símbolo</li>
-                        </ul>
-                    </div>
-
-                    <button type="submit" class="btn">Crear cuenta <i class='bx bx-user-plus'></i></button>
-
-                    <p class="switch">¿Ya tienes cuenta? <a href="#" data-action="show-login">Inicia sesión</a></p>
-                </form>
-
+            <div class="field">
+              <label for="login-password">Contraseña</label>
+              <div class="input-box">
+                <i class="bx bx-lock-alt"></i>
+                <input
+                  type="password"
+                  id="login-password"
+                  name="password"
+                  placeholder="••••••••"
+                  required
+                  maxlength="64"
+                  autocomplete="current-password"
+                />
+                <button
+                  type="button"
+                  class="toggle-pass"
+                  aria-label="Mostrar contraseña"
+                >
+                  <i class="bx bx-show"></i>
+                </button>
+              </div>
+              <small class="error-msg"></small>
             </div>
-        </section>
+
+            <a href="#" class="link forgot" data-action="show-forgot"
+              >¿Olvidaste tu contraseña?</a
+            >
+
+            <button type="submit" class="btn">
+              Entrar <i class="bx bx-right-arrow-alt"></i>
+            </button>
+
+            <div class="divider"><span>o continúa con</span></div>
+
+            <!-- Iconos sociales: solo decorativos, sin funcionalidad -->
+            <div class="social-icons" aria-hidden="true">
+              <span class="social"><i class="bx bxl-google"></i></span>
+              <span class="social"><i class="bx bxl-github"></i></span>
+              <span class="social"><i class="bx bxl-linkedin"></i></span>
+            </div>
+
+            <p class="switch">
+              ¿No tienes cuenta?
+              <a href="#" data-action="show-register">Regístrate</a>
+            </p>
+          </form>
+
+          <!-- ========== OLVIDÉ MI CONTRASEÑA ========== -->
+          <form id="form-forgot" class="view" novalidate>
+            <header class="view-header">
+              <h2>Recuperar contraseña</h2>
+              <p>Te enviaremos las instrucciones a tu correo</p>
+            </header>
+
+            <div class="field">
+              <label for="forgot-email">Correo electrónico</label>
+              <div class="input-box">
+                <i class="bx bx-envelope"></i>
+                <input
+                  type="email"
+                  id="forgot-email"
+                  name="email"
+                  placeholder="usuario@correo.com"
+                  required
+                  maxlength="100"
+                  autocomplete="email"
+                />
+              </div>
+              <small class="error-msg"></small>
+            </div>
+
+            <button type="submit" class="btn">
+              Enviar instrucciones <i class="bx bx-send"></i>
+            </button>
+
+            <a href="#" class="link back" data-action="show-login"
+              ><i class="bx bx-arrow-back"></i> Volver al inicio de sesión</a
+            >
+          </form>
+
+          <!-- ========== REGISTRO ========== -->
+          <form id="form-register" class="view" novalidate>
+            <header class="view-header">
+              <h2>Crea tu cuenta</h2>
+              <p>Completa tus datos para unirte a CITRA</p>
+            </header>
+
+            <div class="field">
+              <label for="reg-name">Nombre completo</label>
+              <div class="input-box">
+                <i class="bx bx-user"></i>
+                <input
+                  type="text"
+                  id="reg-name"
+                  name="name"
+                  placeholder="Ej: Ana Pérez"
+                  required
+                  minlength="3"
+                  maxlength="50"
+                  autocomplete="name"
+                />
+              </div>
+              <small class="error-msg"></small>
+            </div>
+
+            <div class="field">
+              <label for="reg-email">Correo electrónico</label>
+              <div class="input-box">
+                <i class="bx bx-envelope"></i>
+                <input
+                  type="email"
+                  id="reg-email"
+                  name="email"
+                  placeholder="usuario@correo.com"
+                  required
+                  maxlength="100"
+                  autocomplete="email"
+                />
+              </div>
+              <small class="error-msg"></small>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="reg-phone">Teléfono</label>
+                <div class="input-box">
+                  <i class="bx bx-phone"></i>
+                  <input
+                    type="tel"
+                    id="reg-phone"
+                    name="phone"
+                    placeholder="0991234567"
+                    required
+                    pattern="09[0-9]{8}"
+                    minlength="10"
+                    maxlength="10"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                  />
+                </div>
+                <small class="error-msg"></small>
+              </div>
+
+              <div class="field">
+                <label for="reg-age">Edad</label>
+                <div class="input-box">
+                  <i class="bx bx-calendar"></i>
+                  <input
+                    type="number"
+                    id="reg-age"
+                    name="age"
+                    placeholder="18"
+                    required
+                    min="16"
+                    max="99"
+                    step="1"
+                  />
+                </div>
+                <small class="error-msg"></small>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="reg-career">Carrera</label>
+              <div class="input-box">
+                <i class="bx bx-book"></i>
+                <select id="reg-career" name="career" required>
+                  <option value="" selected disabled>
+                    Selecciona tu carrera
+                  </option>
+                  <option value="software">Ingeniería de Software</option>
+                  <option value="ti">Tecnologías de la Información</option>
+                  <option value="industrial">Ingeniería Industrial</option>
+                  <option value="educacion">Educación</option>
+                  <option value="otra">Otra</option>
+                </select>
+              </div>
+              <small class="error-msg"></small>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label for="reg-password">Contraseña</label>
+                <div class="input-box">
+                  <i class="bx bx-lock-alt"></i>
+                  <input
+                    type="password"
+                    id="reg-password"
+                    name="password"
+                    placeholder="••••••••"
+                    required
+                    minlength="8"
+                    maxlength="64"
+                    autocomplete="new-password"
+                  />
+                  <button
+                    type="button"
+                    class="toggle-pass"
+                    aria-label="Mostrar contraseña"
+                  >
+                    <i class="bx bx-show"></i>
+                  </button>
+                </div>
+                <small class="error-msg"></small>
+              </div>
+
+              <div class="field">
+                <label for="reg-confirm">Confirmar contraseña</label>
+                <div class="input-box">
+                  <i class="bx bx-lock"></i>
+                  <input
+                    type="password"
+                    id="reg-confirm"
+                    name="confirm"
+                    placeholder="••••••••"
+                    required
+                    minlength="8"
+                    maxlength="64"
+                    autocomplete="new-password"
+                  />
+                  <button
+                    type="button"
+                    class="toggle-pass"
+                    aria-label="Mostrar contraseña"
+                  >
+                    <i class="bx bx-show"></i>
+                  </button>
+                </div>
+                <small class="error-msg"></small>
+              </div>
+            </div>
+
+            <div class="strength">
+              <div class="strength-bar"><span id="strength-fill"></span></div>
+              <ul class="pass-rules" id="pass-rules">
+                <li data-rule="length">8+ caracteres</li>
+                <li data-rule="upper">Mayúscula</li>
+                <li data-rule="lower">Minúscula</li>
+                <li data-rule="number">Número</li>
+                <li data-rule="special">Símbolo</li>
+              </ul>
+            </div>
+
+            <button type="submit" class="btn">
+              Crear cuenta <i class="bx bx-user-plus"></i>
+            </button>
+
+            <p class="switch">
+              ¿Ya tienes cuenta?
+              <a href="#" data-action="show-login">Inicia sesión</a>
+            </p>
+          </form>
+        </div>
+      </section>
     </main>
 
     <!-- Mensajes emergentes (éxito / error) -->
     <div class="toast" id="toast" role="status" aria-live="polite">
-        <i class='bx bx-check-circle'></i>
-        <span id="toast-text"></span>
+      <i class="bx bx-check-circle"></i>
+      <span id="toast-text"></span>
     </div>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
